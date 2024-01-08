@@ -1,0 +1,24 @@
+#### DFS Key Take-Aways
+- Discover all "deeper" nodes first.  
+- **Runtime**: $O(V + E)$
+- Maintains $v.d/d[v], v.f /f [v], v.π/π[v]$  
+	- $π[u]=$ parent/predecessor of $u$ in the DFS.  
+	- $d[u]=$ time of discovery of $u$ in the DFS.  
+	- $f [u]=$ time when $u$ is finished processing in the DFS  
+	- Note that $d[u] < f [u]$ by construction in the DFS algorithm.  
+- We will discover all nodes in $V$ (produces a DFS forest).  
+
+- WHITE (undiscovered) vs GREY (processing) vs BLACK (finished) nodes.  
+- Tree vs Back vs Forward vs Cross Edges  
+	- **Tree Edge**: in the DFS format, i.e. we explored edge $(u, v)$.  
+	- **Back Edge**: $(u, v)$ such that u is a descendent of $v$ (includes self-loops).  
+	- **Forward Edge**: $(u, v)$ such that u is an ancestor of $v$, but is not a tree edge.  
+	- **Cross Edge**: all other edges.  
+- Back edge exists DFS forest ⇔ cycle exists in graph.  
+- If a graph is undirected, then all edges are either tree or back edges.  
+- When exploring edge $(u, v)$ in DFS:  
+	- $color[v]=$ WHITE: $(u, v)$ is Tree Edge  
+	- $color[v]=$ GREY: $(u, v)$ is Back Edge  
+	- $color[v]=$ BLACK:  
+		- $d[u] < d[v]$, $(u, v)$ is Forward Edge  
+		- $d[u] > d[v]$, $(u, v)$ is Cross Edge  

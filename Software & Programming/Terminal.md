@@ -1,0 +1,11 @@
+## Commands
+- ```$ pwd```: Print working directory
+- ```$ cd```: Change directory
+- ```$ ls```: List
+- ```$ man```: Help
+- ```$ vi```: View
+- ```$ mkdir```: Make directory
+- ```$ cp```: Copy
+- ```$ mu```: Move
+- ```$ rm```: Delete; ```-i``` prompts for confirmation
+- ```$ unzip``` and ```$ zip``` 

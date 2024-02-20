@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software & Programming/Basics of C++.md",
+                "file": "Software & Programming/Memory Allocation & Management.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Software & Programming/Basics of C++.md",
+                "file": "Software & Programming/Memory Allocation & Management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Software & Programming/Basics of C++.md",
+                "file": "Software & Programming/Memory Allocation & Management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Software & Programming/Basics of C++.md"
+                "file": "Software & Programming/Memory Allocation & Management.md"
               }
             }
           }
@@ -197,15 +197,18 @@
   },
   "active": "ba0275a3259bf219",
   "lastOpenFiles": [
-    "Software & Programming/Basics of JavaScript.md",
-    "Software & Programming/Basics of C++.md",
-    "Software & Programming/Compilation.md",
-    "Software & Programming/Programming Basics.md",
-    "Software & Programming/Basics of C.md",
-    "Data Structures/Binary Search Trees.md",
-    "Software & Programming/Terminal.md",
     "Software & Programming/Threads.md",
+    "Software & Programming/Terminal.md",
+    "Software & Programming/Programming Basics.md",
     "Software & Programming/Processes.md",
+    "Software & Programming/Basics of Operating Systems.md",
+    "Software & Programming/Basics of C.md",
+    "Software & Programming/Basics of C++.md",
+    "Software & Programming/Basics of JavaScript.md",
+    "Web Development/NodeJS.md",
+    "README.md",
+    "Software & Programming/Compilation.md",
+    "Data Structures/Binary Search Trees.md",
     "Software & Programming/Memory Allocation & Management.md",
     "Software & Programming/Locks.md",
     "Analysis/Asymptotics.md",
@@ -220,9 +223,6 @@
     "Algorithms/Graph Algorithms/Depth First Search (DFS).md",
     "Algorithms/Graph Algorithms/Breath-First Search (BFS).md",
     "Algorithms/Shortest Path Algorithms/Shortest Path Definitions.md",
-    "Algorithms/Shortest Path Algorithms/Bellman-Ford.md",
-    "Algorithms/Shortest Path Algorithms/Dijkstra.md",
-    "Algorithms/Shortest Path Algorithms/Path Relaxation.md",
     "Web Development",
     "Networking",
     "Analysis",

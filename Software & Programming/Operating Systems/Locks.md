@@ -102,3 +102,4 @@ int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const s
 - The thread calling ```wait``` needs another thread to call ```signal``` or ```broadcast```, then if it’s selected: 
 	1. Gets unblocked (it can be scheduled to run) 
 	2. Tries to lock the mutex again, wait returns when it gets it
+

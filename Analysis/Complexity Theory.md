@@ -88,8 +88,6 @@ HAM-CYCLE = {$<G> : G$ is a hamiltonian graph}
 
 ### The Complexity Class Co-NP
 - A set of languages L such that $\overline{L} \in NP$
-
-![[Pasted image 20231204164112.png]]
 ### ==Reducibility==
 - A language $L_{1}$ is *polynomial-time reducible* to a language $L_{2}$ written $L_{1} \le_{p} L_{2}$, if there exists a polynomial-time computable function $f :$ {0,1}$^*$ -> {0,1}$^*$ such that for all $x \in$ {0,1}$^*$, $x \in L_{1}$ if and only if $f(x) \in L_{2}$
 - Polynomial-time reductions provide a formal means for showing that 1 problem is *at least as hard as another* to within a polynomial-time factor

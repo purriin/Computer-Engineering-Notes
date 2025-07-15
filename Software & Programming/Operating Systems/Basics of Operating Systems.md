@@ -54,6 +54,17 @@ void exit_group(int status);
 
 **Application Binary Interface (ABI)**: Specifically the details, how to pass arguments and where the return value is. Tells you how. Ex. The same function using the C calling convention.
 
+- System calls use registers while C is stack based:
+	- Arguments are pushed on the stack from right-to-left order
+	- `rax`, `rcx`, `rdx` are caller saved
+	- Remaining registers are callee saved
+	- Some arguments may be passed in registers instead of the stack
+
+- Programs on Linux use the ELF file format
+	- Executable and Linkable Format (ELF) specifies both executables and libraries
+	- Always starts with the 4 bytes: `0x7F 0x45 0x4C 0x46` or with ASCII encoding: DEL 'E' 'L' 'F'
+	- These 4 bytes are called "magic" and that is how you know what kind of file this is (other file formats may have a different number of bytes)
+
 **Kernel**: A core part of your operating system. The part of your OS that runs in kernel mode, interacts with hardware.
 - These instructions allow only trusted software to interact with hardware
 - Different types of kernels:
@@ -74,3 +85,21 @@ void exit_group(int status);
 | M-Mode (Machine) | Boot loader, firmware |
 - System calls transition from user and kernel mode
 - System calls are traceable; can trace all the system calls a process makes on Linux using ```strace <PROGRAM>```
+
+- You can think of the kernel as a long running process
+	- Writing kernel code is more like writing library code (there's no main)
+	- The kernel lets you load code (called modules)
+	- Your code executes on-demand
+		- Ex. when it is loaded manually, new hardware, or accessing a certain file
+	- If you write a kernel module you can execute privileged instructions and access any kernel data, so you can do anything
+
+- System calls are rare in C
+	- Mostly you will be using functions from the C standard library instead
+	- Most system calls have corresponding function calls in C but may:
+		- Set `errno`
+		- Buffer reads and writes (reduce the number of system calls)
+		- Simplify interfaces (function combines 2 system calls)
+		- Add new features
+- C `exit` has additional features
+	- System call for `exit` or `exit_group`: the program stops at that point
+	- There is a feature to register functions to call on program exit (`atexit)

@@ -159,3 +159,73 @@ int swapcontext(ucontext_t *, const ucontext_t *);
 - ```stack_t uc_stack``` - the stack used by this context
 - ```mcontext_t uc_mcontext``` - a machine-specific representation of the saved context
 
+## 5. Multithreading Models
+
+### 5.1 Where do we implement threads?
+- **User threads:**
+    - Implemented completely in user-space.
+    - Kernel doesn’t treat the process differently.
+- **Kernel threads:**
+    - Implemented in kernel-space.
+    - Kernel manages and treats threads specially.
+### 5.2 Thread Support Requires a Thread Table
+
+- Similar to the process table.
+- May reside in user-space or kernel-space.
+- **User threads** require a run-time system for scheduling.
+- Both models allow multiple threads per process.
+### 5.3 Blocking Behavior
+#### 5.3.1 User-level threads (no kernel support):
+- Fast creation/destruction (no syscalls or context switches).
+- Blocking one thread blocks the whole process.
+#### 5.3.2 Kernel-level threads:
+- Slower (requires system calls).
+- If one thread blocks, kernel can schedule another.
+### 5.4 Threading Library Models
+#### 5.4.1 Types of Threading Libraries
+- **Many-to-one:**
+    - All user threads map to one kernel thread.
+    - Kernel sees one process.
+- **One-to-one:**
+    - One user thread = one kernel thread.
+    - Kernel handles everything.
+- **Many-to-many:**
+    - Many user threads mapped to many kernel threads.
+#### 5.4.2 Many-to-One
+- Pure user-space implementation.
+- Portable and fast.
+- Drawbacks:
+    - Blocking affects all threads.
+    - No true parallelism (only one thread runs at a time).
+#### 5.4.3 One-to-One
+- Thin wrapper over kernel thread support.
+- Allows full parallelism (multiple threads run simultaneously).
+- Downside: slower due to syscall overhead.
+- **Default for Linux.**
+#### 5.4.4 Many-to-Many
+- More user-level threads than kernel threads.
+- Cap kernel threads to available CPUs.
+- Reduces system calls.
+- More complex implementation (e.g., Java Virtual Threads).
+- Thread blocking may affect others depending on mapping.
+### 5.5 Kernel Complications
+#### 5.5.1 Forking with threads
+- What happens when a multi-threaded process calls `fork()`?
+- **Linux behavior:**
+    - Only the calling thread is copied into the new process.
+    - `pthread_exit()` will return status 0.
+    - Use `pthread_atfork` to customize (not covered here).
+#### 5.5.2 Signal Handling
+- Signals are sent to the **process**, not a specific thread.
+- Linux arbitrarily chooses a thread to handle the signal.
+- Complicates concurrency and predictability.
+#### 5.5.3 Thread Pools
+- Alternative to many-to-many mapping.
+- Pre-create a fixed number of threads and a task queue.
+- Reuse threads for new work.
+- Sleep when idle, wake up on new tasks.
+#### 5.5.4 [Round Robin Scheduler](Scheduling.md)
+- Queue-based scheduling.
+- Run thread at the front, yield puts it at the back.
+- Context switch required (save/restore registers).
+- Cooperative threading (preemptive coming later).

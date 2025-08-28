@@ -27,7 +27,6 @@
 - For example 0x1:0xFF with segment 0x1 base = 0x2000, limit = 0x1FF 
 	- Translates to 0x20FF 
 - Note: Linux sets every base to 0, and limit to the maximum amount
-
 First Insight: Divide Memory into Fixed-Sized Chunks
 ## 3. Memory Management Unit (MMU)
 **Memory Management Unit (MMU)**: Maps virtual address to physical address. Also checks permissions

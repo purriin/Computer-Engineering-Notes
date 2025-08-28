@@ -25,7 +25,7 @@
 | L1 cache reference (~ 80 KB)          | 1 ns    |
 | Branch mispredict                     | 3 ns    |
 | L2 cache reference (~ 2 MB)           | 4 ns    |
-| [Mutex lock/unlock](Locks.md)         | 17 ns   |
+| [Mutex lock/unlock](Locks.md)    | 17 ns   |
 | Send 1K bytes over 1 Gbps network     | 44 ns   |
 | Main memory reference                 | 100 ns  |
 | Compress 1K bytes with Zippy          | 2 μs    |

@@ -240,7 +240,6 @@ This may also be called: **Feedback Scheduling**
 - The first access to the page generates a page fault  
 - The kernel reads from disk into memory  
 - Ensures only the used parts of the file get read  
-
 ### 3.4 How Much Space Would the Kernel Need for Page Tables?  
 - Someone posted you’d need 40 MB of page tables  
 - Someone clarified the calculation  

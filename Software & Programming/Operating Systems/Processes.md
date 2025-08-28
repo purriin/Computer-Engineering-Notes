@@ -1,5 +1,5 @@
 ### Table of Contents
-[[Processes#1. Background |1. Background]]
+[[Processes#1. Background|1. Background]]
 [[Processes#2. Creating Processes|2. Creating Processes]]
 [[Processes#3. Parent-Child Relationship|3. Parent-Child Relationship]]
 [[Processes#4. Inter-Process Communication|4. Inter-Process Communication]]

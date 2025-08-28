@@ -1,3 +1,7 @@
+## Table of Contents
+[[Basics of JavaScript#1. Introduction |1. Introduction]]
+[[Basics of JavaScript#2. Variables|2. Variables]]
+[[Basics of JavaScript#3. Conditional Statements|3. Conditional Statements]]
 ## 1. Introduction
 - C++ source files use .cpp, .cxx or .cc extensions
 - C++ program starts executing in ```int main(int argc, char* argv[])``` 

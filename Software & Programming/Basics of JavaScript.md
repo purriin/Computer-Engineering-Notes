@@ -1,8 +1,7 @@
 ## Table of Contents
 [[Basics of JavaScript#1. Introduction |1. Introduction]]
-[[Basics of JavaScript#2. Variables|2. Variables]]
-[[Basics of JavaScript#3. Conditional Statements|3. Conditional Statements]]
-[[Basics of JavaScript#4. Functions|4. Functions]]
+[[Basics of C++#2. Variables|2. Variables]]
+[[Basics of C++#3. Conditional Statements|3. Conditional Statements]]
 ## 1. Introduction
 **Console**: A panel that displays important messages like errors, an object that can be used.
 
